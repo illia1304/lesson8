@@ -4,6 +4,8 @@ Compare("Hello", "hello");
 
 Analyze("falkqnwef12324$$$");
 
+Sort("vcxa");
+
 void Compare(string a, string b)
 {
     Console.WriteLine(a==b?"true":"false");
@@ -30,3 +32,13 @@ void Analyze(string a)
     Console.WriteLine(numbers + " " + alp + " " + specialCharacters);
 }
 
+void Sort(string a)
+{
+    char[] chars = a.ToCharArray();
+    Array.Sort(chars);
+
+    for(int i = 0; i < chars.Length; i++)
+    {
+        Console.Write(chars[i]);
+    }
+}
