@@ -1,10 +1,14 @@
-﻿Compare("rwgjnreg", "wgkrng");
+﻿using System.Text;
+
+Compare("rwgjnreg", "wgkrng");
 Compare("hello", "hello");
 Compare("Hello", "hello");
 
 Analyze("falkqnwef12324$$$");
 
 Sort("vcxa");
+
+Duplicate("abcdabff");
 
 void Compare(string a, string b)
 {
@@ -39,6 +43,24 @@ void Sort(string a)
 
     for(int i = 0; i < chars.Length; i++)
     {
-        Console.Write(chars[i]);
+        Console.WriteLine(chars[i]);
     }
+}
+
+void Duplicate(string a)
+{
+    a = a.ToLower();
+    StringBuilder duplicate = new StringBuilder();
+
+    for(int i = 0; i < a.Length; i++)
+    {
+        for(int j = i+1; j < a.Length; j++)
+        {
+            if(a[i] == a[j])
+            {
+                duplicate.Append(a[j]);
+            }
+        }
+    }
+    Console.WriteLine(duplicate.ToString());
 }
